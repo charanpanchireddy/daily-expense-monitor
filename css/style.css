@@ -1,0 +1,113 @@
+:root {
+  --sidebar-w: 220px;
+  --topbar-h: 70px;
+  --bg-light: #f8f9fa;
+  --bg-dark: #121212;
+  --card-light: #ffffff;
+  --card-dark: #1e1e1e;
+  --border-light: #e7e7e7;
+  --border-dark: #2a2a2a;
+}
+
+/* base */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg-light);
+}
+a { text-decoration: none; }
+
+/* sidebar */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  position: fixed;
+  left: 0; top: 0;
+  background: #fff;
+  border-right: 1px solid var(--border-light);
+  padding: 20px 14px;
+}
+.sidebar .logo {
+  font-size: 34px;
+  font-weight: 700;
+}
+.sidebar nav a {
+  display: block;
+  margin: 18px 0;
+  color: #333;
+}
+.sidebar nav a:hover { color: #0d6efd; }
+
+/* topbar */
+.topbar {
+  height: var(--topbar-h);
+  position: fixed;
+  left: 0; right: 0; top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+.topbar-inner {
+  width: 100%;
+  padding-left: calc(var(--sidebar-w) + 16px);
+  padding-right: 20px;
+  position: relative;
+}
+.topbar-title {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+}
+
+/* profile image */
+.profile-img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+/* content */
+.content {
+  margin-left: var(--sidebar-w);
+  margin-top: calc(var(--topbar-h) + 18px);
+  padding: 20px;
+}
+
+/* cards */
+.box {
+  background: var(--card-light);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* dark mode */
+.dark-mode {
+  background: var(--bg-dark);
+  color: #e6e6e6;
+}
+.dark-mode .sidebar,
+.dark-mode .topbar {
+  background: #0f0f0f;
+  border-color: var(--border-dark);
+}
+.dark-mode .box {
+  background: var(--card-dark);
+  border-color: var(--border-dark);
+}
+.dark-mode .sidebar nav a { color: #cfcfcf; }
+.dark-mode .sidebar nav a:hover { color: #fff; }
+.dark-mode .form-control {
+  background: #141414;
+  color: #e6e6e6;
+  border-color: var(--border-dark);
+}
+
+/* small */
+.kpi { font-weight: 600; font-size: 1.1rem; }
+.small-muted { font-size: .85rem; color: #6c757d; }
